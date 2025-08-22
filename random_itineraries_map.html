@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3662709d154be49d9e773a907260d5bb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 150px; height: 120px; 
+                border:2px solid grey; z-index:9999; 
+                background-color:white; padding: 10px;
+                font-size: 14px;">
+     <p><b>Legend</b></p>
+     <p>Solid lines: Normal Itinerary</p>
+     <p>Dashed lines: Fast Travel Itinerary</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_3662709d154be49d9e773a907260d5bb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3662709d154be49d9e773a907260d5bb = L.map(
+                "map_3662709d154be49d9e773a907260d5bb",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7fd471fb53de6a7abb42705e970d9fde = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var marker_6b9758ef996c116d3c5971c267e5365e = L.marker(
+                [19.076, 72.8777],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_7927c094bf96e0c661be0f3e1851d76e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6b9758ef996c116d3c5971c267e5365e.setIcon(icon_7927c094bf96e0c661be0f3e1851d76e);
+        
+    
+        var popup_5fcac64cee9697134597047aa62a2e9d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_905d3bca8bfde6a3ef3a5c538e092ea7 = $(`<div id="html_905d3bca8bfde6a3ef3a5c538e092ea7" style="width: 100.0%; height: 100.0%;"><b>Mumbai</b><br><br>Rahul Sharma:<br>Arrival: 2025-04-27 14:39<br>Departure: 2025-04-28 16:39<br><br>Priya Patel:<br>Arrival: 2025-04-25 06:29<br>Departure: 2025-04-27 23:29<br><br>Arjun Malhotra:<br>Arrival: 2025-04-26 02:29<br>Departure: 2025-04-28 01:29</div>`)[0];
+                popup_5fcac64cee9697134597047aa62a2e9d.setContent(html_905d3bca8bfde6a3ef3a5c538e092ea7);
+            
+        
+
+        marker_6b9758ef996c116d3c5971c267e5365e.bindPopup(popup_5fcac64cee9697134597047aa62a2e9d)
+        ;
+
+        
+    
+    
+            var marker_7b9a6cc69e5b9cbf526d956c4da80a1b = L.marker(
+                [28.7041, 77.1025],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_09e834a018958baabf3ba3100956927a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7b9a6cc69e5b9cbf526d956c4da80a1b.setIcon(icon_09e834a018958baabf3ba3100956927a);
+        
+    
+        var popup_7a2f877d1288c1c7f278f7955857ecc4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c835642c800a234d5e3a93d19daa83af = $(`<div id="html_c835642c800a234d5e3a93d19daa83af" style="width: 100.0%; height: 100.0%;"><b>Delhi</b><br><br>Priya Patel:<br>Arrival: 2025-04-30 03:13<br>Departure: 2025-05-01 14:13</div>`)[0];
+                popup_7a2f877d1288c1c7f278f7955857ecc4.setContent(html_c835642c800a234d5e3a93d19daa83af);
+            
+        
+
+        marker_7b9a6cc69e5b9cbf526d956c4da80a1b.bindPopup(popup_7a2f877d1288c1c7f278f7955857ecc4)
+        ;
+
+        
+    
+    
+            var marker_43a668327351071fe6cd748a21045178 = L.marker(
+                [12.9716, 77.5946],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_0d9a0181b01d9dbab71a8cd94f81bc48 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_43a668327351071fe6cd748a21045178.setIcon(icon_0d9a0181b01d9dbab71a8cd94f81bc48);
+        
+    
+        var popup_ad44cbc6907d7e1dc72fb882768a1e4c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b941bdca25a0282e29df6b9ef2958191 = $(`<div id="html_b941bdca25a0282e29df6b9ef2958191" style="width: 100.0%; height: 100.0%;"><b>Bangalore</b><br><br>Rahul Sharma:<br>Arrival: 2025-04-26 02:29<br>Departure: 2025-04-27 14:29<br><br>Rahul Sharma:<br>Arrival: 2025-04-28 17:39<br>Departure: 2025-05-01 07:39<br><br>Ananya Reddy:<br>Arrival: 2025-05-02 11:05<br>Departure: 2025-05-04 22:05<br><br>Ananya Reddy:<br>Arrival: 2025-05-07 08:25<br>Departure: 2025-05-09 07:25<br><br>Sneha Joshi:<br>Arrival: 2025-04-26 11:52<br>Departure: 2025-04-27 14:52<br><br>Arjun Malhotra:<br>Arrival: 2025-04-30 17:58<br>Departure: 2025-05-02 23:58</div>`)[0];
+                popup_ad44cbc6907d7e1dc72fb882768a1e4c.setContent(html_b941bdca25a0282e29df6b9ef2958191);
+            
+        
+
+        marker_43a668327351071fe6cd748a21045178.bindPopup(popup_ad44cbc6907d7e1dc72fb882768a1e4c)
+        ;
+
+        
+    
+    
+            var marker_fe03189a0ad2cb4bb966a38ebb013d55 = L.marker(
+                [15.2993, 74.124],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_1cca54c2518f929bfd63200c6c8af0ce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fe03189a0ad2cb4bb966a38ebb013d55.setIcon(icon_1cca54c2518f929bfd63200c6c8af0ce);
+        
+    
+        var popup_7d1edaef79a47f85af6106bdc5512360 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_959feed0d2a5e1f06f9ac5f74f434edf = $(`<div id="html_959feed0d2a5e1f06f9ac5f74f434edf" style="width: 100.0%; height: 100.0%;"><b>Goa</b><br><br>Priya Patel:<br>Arrival: 2025-04-28 00:10<br>Departure: 2025-04-30 03:10<br><br>Amit Kumar:<br>Arrival: 2025-04-23 02:29<br>Departure: 2025-04-25 13:29<br><br>Amit Kumar:<br>Arrival: 2025-04-27 02:53<br>Departure: 2025-04-29 09:53<br><br>Vikram Singh:<br>Arrival: 2025-04-30 14:14<br>Departure: 2025-05-02 13:14<br><br>Ishaan Khanna:<br>Arrival: 2025-04-28 18:34<br>Departure: 2025-04-30 05:34</div>`)[0];
+                popup_7d1edaef79a47f85af6106bdc5512360.setContent(html_959feed0d2a5e1f06f9ac5f74f434edf);
+            
+        
+
+        marker_fe03189a0ad2cb4bb966a38ebb013d55.bindPopup(popup_7d1edaef79a47f85af6106bdc5512360)
+        ;
+
+        
+    
+    
+            var marker_a908ab1773397b396c4f89f66b3a8e85 = L.marker(
+                [26.9124, 75.7873],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_77f8461538301b00534d1b48bf306b80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a908ab1773397b396c4f89f66b3a8e85.setIcon(icon_77f8461538301b00534d1b48bf306b80);
+        
+    
+        var popup_8358856da19efef4238359cbf742527b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a0a6aef825f29faf376fbb27f5cefcfd = $(`<div id="html_a0a6aef825f29faf376fbb27f5cefcfd" style="width: 100.0%; height: 100.0%;"><b>Jaipur</b><br><br>Amit Kumar:<br>Arrival: 2025-04-25 13:53<br>Departure: 2025-04-27 01:53<br><br>Vikram Singh:<br>Arrival: 2025-04-27 16:14<br>Departure: 2025-04-30 13:14</div>`)[0];
+                popup_8358856da19efef4238359cbf742527b.setContent(html_a0a6aef825f29faf376fbb27f5cefcfd);
+            
+        
+
+        marker_a908ab1773397b396c4f89f66b3a8e85.bindPopup(popup_8358856da19efef4238359cbf742527b)
+        ;
+
+        
+    
+    
+            var marker_aae00a766c60dd97955c62d245891e8c = L.marker(
+                [10.8505, 76.2711],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_92427c0aa56e72089b75a88b52853439 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aae00a766c60dd97955c62d245891e8c.setIcon(icon_92427c0aa56e72089b75a88b52853439);
+        
+    
+        var popup_01af0f749ff18e18c31bfedc402299bd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c3261b110da456b0890f1d277278a899 = $(`<div id="html_c3261b110da456b0890f1d277278a899" style="width: 100.0%; height: 100.0%;"><b>Kerala</b><br><br>Neha Gupta:<br>Arrival: 2025-04-22 02:29<br>Departure: 2025-04-24 05:29<br><br>Vikram Singh:<br>Arrival: 2025-04-25 10:29<br>Departure: 2025-04-27 15:29<br><br>Ananya Reddy:<br>Arrival: 2025-05-01 07:29<br>Departure: 2025-05-02 10:29<br><br>Arjun Malhotra:<br>Arrival: 2025-05-07 11:13<br>Departure: 2025-05-08 19:13</div>`)[0];
+                popup_01af0f749ff18e18c31bfedc402299bd.setContent(html_c3261b110da456b0890f1d277278a899);
+            
+        
+
+        marker_aae00a766c60dd97955c62d245891e8c.bindPopup(popup_01af0f749ff18e18c31bfedc402299bd)
+        ;
+
+        
+    
+    
+            var marker_c2a2fa666663028576b749d1203d9fa1 = L.marker(
+                [31.1048, 77.1734],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_aab3c981fadb0afa38d9a8fc18b3b1ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c2a2fa666663028576b749d1203d9fa1.setIcon(icon_aab3c981fadb0afa38d9a8fc18b3b1ca);
+        
+    
+        var popup_0710f787909a46437701ddde5e37c674 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f8cb0971345607c9c6850ca6d80e073b = $(`<div id="html_f8cb0971345607c9c6850ca6d80e073b" style="width: 100.0%; height: 100.0%;"><b>Shimla</b><br><br>Ananya Reddy:<br>Arrival: 2025-05-04 22:52<br>Departure: 2025-05-07 07:52<br><br>Sneha Joshi:<br>Arrival: 2025-04-22 14:49<br>Departure: 2025-04-25 02:49</div>`)[0];
+                popup_0710f787909a46437701ddde5e37c674.setContent(html_f8cb0971345607c9c6850ca6d80e073b);
+            
+        
+
+        marker_c2a2fa666663028576b749d1203d9fa1.bindPopup(popup_0710f787909a46437701ddde5e37c674)
+        ;
+
+        
+    
+    
+            var marker_32f1a586ead5504f80385b58e5933a85 = L.marker(
+                [27.036, 88.2627],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_039a7b09ff3f1c639adf5410023e7b6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_32f1a586ead5504f80385b58e5933a85.setIcon(icon_039a7b09ff3f1c639adf5410023e7b6a);
+        
+    
+        var popup_018df4ceb96acebbfcd27a8a7e6ca145 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_13c89a855b027067ca8bec17aac3c8a1 = $(`<div id="html_13c89a855b027067ca8bec17aac3c8a1" style="width: 100.0%; height: 100.0%;"><b>Darjeeling</b><br><br>Amit Kumar:<br>Arrival: 2025-04-29 10:45<br>Departure: 2025-05-01 18:45<br><br>Sneha Joshi:<br>Arrival: 2025-04-27 15:52<br>Departure: 2025-04-28 15:52</div>`)[0];
+                popup_018df4ceb96acebbfcd27a8a7e6ca145.setContent(html_13c89a855b027067ca8bec17aac3c8a1);
+            
+        
+
+        marker_32f1a586ead5504f80385b58e5933a85.bindPopup(popup_018df4ceb96acebbfcd27a8a7e6ca145)
+        ;
+
+        
+    
+    
+            var marker_0e1b5d1936e9777b49a03f5cb3c0deda = L.marker(
+                [25.3176, 82.9739],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_d0831fe2ba392938e9d4b164fc7f84c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0e1b5d1936e9777b49a03f5cb3c0deda.setIcon(icon_d0831fe2ba392938e9d4b164fc7f84c5);
+        
+    
+        var popup_3f69754f0607c7e2cc3d1a04b3be12f8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f7d1a29c67949fff3b604c87115d97b1 = $(`<div id="html_f7d1a29c67949fff3b604c87115d97b1" style="width: 100.0%; height: 100.0%;"><b>Varanasi</b><br><br>Ishaan Khanna:<br>Arrival: 2025-04-30 06:34<br>Departure: 2025-05-01 06:34</div>`)[0];
+                popup_3f69754f0607c7e2cc3d1a04b3be12f8.setContent(html_f7d1a29c67949fff3b604c87115d97b1);
+            
+        
+
+        marker_0e1b5d1936e9777b49a03f5cb3c0deda.bindPopup(popup_3f69754f0607c7e2cc3d1a04b3be12f8)
+        ;
+
+        
+    
+    
+            var marker_ba645ba934826fe95fb679cc28cf0c77 = L.marker(
+                [27.1767, 78.0081],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_8e24bd0df217c7d6535476cc30d9c7a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba645ba934826fe95fb679cc28cf0c77.setIcon(icon_8e24bd0df217c7d6535476cc30d9c7a0);
+        
+    
+        var popup_1be46acc7e6a42d21bf33243200394fc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_977f1c0d2ff20ccf4e8598c7140674ca = $(`<div id="html_977f1c0d2ff20ccf4e8598c7140674ca" style="width: 100.0%; height: 100.0%;"><b>Agra</b><br><br>Rahul Sharma:<br>Arrival: 2025-05-01 08:14<br>Departure: 2025-05-03 12:14<br><br>Neha Gupta:<br>Arrival: 2025-04-26 08:29<br>Departure: 2025-04-29 06:29<br><br>Vikram Singh:<br>Arrival: 2025-04-22 02:29<br>Departure: 2025-04-23 16:29</div>`)[0];
+                popup_1be46acc7e6a42d21bf33243200394fc.setContent(html_977f1c0d2ff20ccf4e8598c7140674ca);
+            
+        
+
+        marker_ba645ba934826fe95fb679cc28cf0c77.bindPopup(popup_1be46acc7e6a42d21bf33243200394fc)
+        ;
+
+        
+    
+    
+            var marker_b0f65d88018996923653e994d0d25737 = L.marker(
+                [24.5854, 73.7125],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_3c1f33d93f79a15c997c7675eb26aa87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b0f65d88018996923653e994d0d25737.setIcon(icon_3c1f33d93f79a15c997c7675eb26aa87);
+        
+    
+        var popup_25d75a3dc1d293a2cf269cf90ba5b16c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_41811ed9e861004332f35f0ee40b7d44 = $(`<div id="html_41811ed9e861004332f35f0ee40b7d44" style="width: 100.0%; height: 100.0%;"><b>Udaipur</b><br><br>Rahul Sharma:<br>Arrival: 2025-05-03 13:02<br>Departure: 2025-05-05 06:02<br><br>Rohan Mehta:<br>Arrival: 2025-04-24 01:09<br>Departure: 2025-04-25 01:09<br><br>Sneha Joshi:<br>Arrival: 2025-04-25 02:52<br>Departure: 2025-04-26 10:52<br><br>Arjun Malhotra:<br>Arrival: 2025-05-03 00:00<br>Departure: 2025-05-04 16:00</div>`)[0];
+                popup_25d75a3dc1d293a2cf269cf90ba5b16c.setContent(html_41811ed9e861004332f35f0ee40b7d44);
+            
+        
+
+        marker_b0f65d88018996923653e994d0d25737.bindPopup(popup_25d75a3dc1d293a2cf269cf90ba5b16c)
+        ;
+
+        
+    
+    
+            var marker_31073a6a2ffe0f9761efa5fe0cf42ef5 = L.marker(
+                [30.0869, 78.2676],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_8bf67f26686bdb4e3e3b9be2c3d2264c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_31073a6a2ffe0f9761efa5fe0cf42ef5.setIcon(icon_8bf67f26686bdb4e3e3b9be2c3d2264c);
+        
+    
+        var popup_6423b53749f24c981e8e5053b3ac477f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_229e2ad286f0f34870161148a93b1509 = $(`<div id="html_229e2ad286f0f34870161148a93b1509" style="width: 100.0%; height: 100.0%;"><b>Rishikesh</b><br><br>Rahul Sharma:<br>Arrival: 2025-05-05 06:14<br>Departure: 2025-05-08 00:14<br><br>Rohan Mehta:<br>Arrival: 2025-04-21 02:29<br>Departure: 2025-04-24 00:29<br><br>Arjun Malhotra:<br>Arrival: 2025-04-28 01:36<br>Departure: 2025-04-30 17:36<br><br>Arjun Malhotra:<br>Arrival: 2025-05-04 17:00<br>Departure: 2025-05-07 11:00</div>`)[0];
+                popup_6423b53749f24c981e8e5053b3ac477f.setContent(html_229e2ad286f0f34870161148a93b1509);
+            
+        
+
+        marker_31073a6a2ffe0f9761efa5fe0cf42ef5.bindPopup(popup_6423b53749f24c981e8e5053b3ac477f)
+        ;
+
+        
+    
+    
+            var marker_5200418b9a0b38d5275b9f5140e1eced = L.marker(
+                [12.2958, 76.6394],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_b77865f2a85a1f24eee1bb513ab3d61c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5200418b9a0b38d5275b9f5140e1eced.setIcon(icon_b77865f2a85a1f24eee1bb513ab3d61c);
+        
+    
+        var popup_fe8a92160f250da5ae02b486f1420696 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ec03d8af99935cb490711cea7a4caabe = $(`<div id="html_ec03d8af99935cb490711cea7a4caabe" style="width: 100.0%; height: 100.0%;"><b>Mysore</b><br><br>Priya Patel:<br>Arrival: 2025-05-01 15:11<br>Departure: 2025-05-02 18:11<br><br>Amit Kumar:<br>Arrival: 2025-05-01 19:45<br>Departure: 2025-05-04 04:45<br><br>Sneha Joshi:<br>Arrival: 2025-04-21 02:29<br>Departure: 2025-04-22 14:29</div>`)[0];
+                popup_fe8a92160f250da5ae02b486f1420696.setContent(html_ec03d8af99935cb490711cea7a4caabe);
+            
+        
+
+        marker_5200418b9a0b38d5275b9f5140e1eced.bindPopup(popup_fe8a92160f250da5ae02b486f1420696)
+        ;
+
+        
+    
+    
+            var marker_95fd9bad7518894c7f39c13cdd7778a1 = L.marker(
+                [11.9139, 79.8145],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_a7655f1eda56635e633f7099c84c63fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_95fd9bad7518894c7f39c13cdd7778a1.setIcon(icon_a7655f1eda56635e633f7099c84c63fc);
+        
+    
+        var popup_e8d5520cadc13988a69392074700d17b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44b4f6a01f5011d98ff139f5a6f8e239 = $(`<div id="html_44b4f6a01f5011d98ff139f5a6f8e239" style="width: 100.0%; height: 100.0%;"><b>Pondicherry</b><br><br>Priya Patel:<br>Arrival: 2025-04-24 02:29<br>Departure: 2025-04-25 05:29<br><br>Vikram Singh:<br>Arrival: 2025-05-02 13:54<br>Departure: 2025-05-04 05:54<br><br>Ananya Reddy:<br>Arrival: 2025-04-28 02:29<br>Departure: 2025-04-29 08:29<br><br>Ananya Reddy:<br>Arrival: 2025-04-29 09:29<br>Departure: 2025-05-01 06:29<br><br>Rohan Mehta:<br>Arrival: 2025-04-25 01:39<br>Departure: 2025-04-26 23:39</div>`)[0];
+                popup_e8d5520cadc13988a69392074700d17b.setContent(html_44b4f6a01f5011d98ff139f5a6f8e239);
+            
+        
+
+        marker_95fd9bad7518894c7f39c13cdd7778a1.bindPopup(popup_e8d5520cadc13988a69392074700d17b)
+        ;
+
+        
+    
+    
+            var marker_d590d12bff22965a11c741cb72f8198b = L.marker(
+                [31.634, 74.8723],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var icon_f756da295eef8e0e5c3d1ae85558ea2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d590d12bff22965a11c741cb72f8198b.setIcon(icon_f756da295eef8e0e5c3d1ae85558ea2b);
+        
+    
+        var popup_cb54ffcdb3c2d8062bf06fe868c9d666 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9877fead1ccf3aa251762d1359c8f138 = $(`<div id="html_9877fead1ccf3aa251762d1359c8f138" style="width: 100.0%; height: 100.0%;"><b>Amritsar</b><br><br>Neha Gupta:<br>Arrival: 2025-04-24 06:29<br>Departure: 2025-04-26 07:29<br><br>Vikram Singh:<br>Arrival: 2025-04-23 17:29<br>Departure: 2025-04-25 09:29<br><br>Ishaan Khanna:<br>Arrival: 2025-04-26 02:29<br>Departure: 2025-04-28 18:29</div>`)[0];
+                popup_cb54ffcdb3c2d8062bf06fe868c9d666.setContent(html_9877fead1ccf3aa251762d1359c8f138);
+            
+        
+
+        marker_d590d12bff22965a11c741cb72f8198b.bindPopup(popup_cb54ffcdb3c2d8062bf06fe868c9d666)
+        ;
+
+        
+    
+    
+            var poly_line_1a366cf5690e67db9dbab8b652403478 = L.polyline(
+                [[12.9716, 77.5946], [19.076, 72.8777]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_00831485c95990d191f47a26fd0b52cc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7db4eb339d8648f68e57207346b2fa08 = $(`<div id="html_7db4eb339d8648f68e57207346b2fa08" style="width: 100.0%; height: 100.0%;"><b>Rahul Sharma's Journey</b><br>From: Bangalore<br>To: Mumbai<br>Departure: 2025-04-27 14:29<br>Arrival: 2025-04-27 14:39<br>Travel Time: 0.2 hours<br>Minimum Required Time: 1.5 hours</div>`)[0];
+                popup_00831485c95990d191f47a26fd0b52cc.setContent(html_7db4eb339d8648f68e57207346b2fa08);
+            
+        
+
+        poly_line_1a366cf5690e67db9dbab8b652403478.bindPopup(popup_00831485c95990d191f47a26fd0b52cc)
+        ;
+
+        
+    
+    
+            var marker_285bc017b2c1ac9219473c97a3ab07e3 = L.marker(
+                [16.0238, 75.23615000000001],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_262d22056b2372ac953e83ff08140134 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: red;\"\u003e0.2h\u003c/div\u003e"});
+            marker_285bc017b2c1ac9219473c97a3ab07e3.setIcon(div_icon_262d22056b2372ac953e83ff08140134);
+        
+    
+        var popup_473e015fd2bb8edc2273737dfcdf9fee = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7a0a205860b3ff04fd77c38013201be5 = $(`<div id="html_7a0a205860b3ff04fd77c38013201be5" style="width: 100.0%; height: 100.0%;">Travel Time: 0.2 hours<br>Minimum Required: 1.5 hours</div>`)[0];
+                popup_473e015fd2bb8edc2273737dfcdf9fee.setContent(html_7a0a205860b3ff04fd77c38013201be5);
+            
+        
+
+        marker_285bc017b2c1ac9219473c97a3ab07e3.bindPopup(popup_473e015fd2bb8edc2273737dfcdf9fee)
+        ;
+
+        
+    
+    
+            var poly_line_52cec5ae90c6b502d9ec7c112bb8c5b6 = L.polyline(
+                [[19.076, 72.8777], [12.9716, 77.5946]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_8777e89fef32b6fd98d345ec3cf9d265 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1cc153163326851c2cf090d3a4400e65 = $(`<div id="html_1cc153163326851c2cf090d3a4400e65" style="width: 100.0%; height: 100.0%;"><b>Rahul Sharma's Journey</b><br>From: Mumbai<br>To: Bangalore<br>Departure: 2025-04-28 16:39<br>Arrival: 2025-04-28 17:39<br>Travel Time: 1.0 hours<br>Minimum Required Time: 1.5 hours</div>`)[0];
+                popup_8777e89fef32b6fd98d345ec3cf9d265.setContent(html_1cc153163326851c2cf090d3a4400e65);
+            
+        
+
+        poly_line_52cec5ae90c6b502d9ec7c112bb8c5b6.bindPopup(popup_8777e89fef32b6fd98d345ec3cf9d265)
+        ;
+
+        
+    
+    
+            var marker_4b9aa3ffe8abb0f8dbd9b4e9550c72bf = L.marker(
+                [16.0238, 75.23615000000001],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_d54fee0c93ca2db594606ca70886c6a4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: red;\"\u003e1.0h\u003c/div\u003e"});
+            marker_4b9aa3ffe8abb0f8dbd9b4e9550c72bf.setIcon(div_icon_d54fee0c93ca2db594606ca70886c6a4);
+        
+    
+        var popup_59178104f141a5556ea4325e6d21d77c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_cf571a1ed9a6c0f82da25499936638ce = $(`<div id="html_cf571a1ed9a6c0f82da25499936638ce" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 1.5 hours</div>`)[0];
+                popup_59178104f141a5556ea4325e6d21d77c.setContent(html_cf571a1ed9a6c0f82da25499936638ce);
+            
+        
+
+        marker_4b9aa3ffe8abb0f8dbd9b4e9550c72bf.bindPopup(popup_59178104f141a5556ea4325e6d21d77c)
+        ;
+
+        
+    
+    
+            var poly_line_261bb242bfeec1539754fb928193a4a9 = L.polyline(
+                [[12.9716, 77.5946], [27.1767, 78.0081]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_8081dceb5d7f1343b887a1575bf132f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4940c4620c06e08568d6b5a051cf9fa2 = $(`<div id="html_4940c4620c06e08568d6b5a051cf9fa2" style="width: 100.0%; height: 100.0%;"><b>Rahul Sharma's Journey</b><br>From: Bangalore<br>To: Agra<br>Departure: 2025-05-01 07:39<br>Arrival: 2025-05-01 08:14<br>Travel Time: 0.6 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_8081dceb5d7f1343b887a1575bf132f2.setContent(html_4940c4620c06e08568d6b5a051cf9fa2);
+            
+        
+
+        poly_line_261bb242bfeec1539754fb928193a4a9.bindPopup(popup_8081dceb5d7f1343b887a1575bf132f2)
+        ;
+
+        
+    
+    
+            var marker_a24eff092fc2a3f227bafa221afac28e = L.marker(
+                [20.07415, 77.80135],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_c30349717910c00ab95d88193d7a7cd3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: red;\"\u003e0.6h\u003c/div\u003e"});
+            marker_a24eff092fc2a3f227bafa221afac28e.setIcon(div_icon_c30349717910c00ab95d88193d7a7cd3);
+        
+    
+        var popup_a2e72bb964e7dea5ae18f3dab7af38c4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_42e254509147ded970065fa1e07f3847 = $(`<div id="html_42e254509147ded970065fa1e07f3847" style="width: 100.0%; height: 100.0%;">Travel Time: 0.6 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_a2e72bb964e7dea5ae18f3dab7af38c4.setContent(html_42e254509147ded970065fa1e07f3847);
+            
+        
+
+        marker_a24eff092fc2a3f227bafa221afac28e.bindPopup(popup_a2e72bb964e7dea5ae18f3dab7af38c4)
+        ;
+
+        
+    
+    
+            var poly_line_22eb512eba1387f7b75d00c05697076a = L.polyline(
+                [[27.1767, 78.0081], [24.5854, 73.7125]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_e91544fbb6dfda8c114635b70e719541 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1fb720b904ea6f133396c7136a4248cc = $(`<div id="html_1fb720b904ea6f133396c7136a4248cc" style="width: 100.0%; height: 100.0%;"><b>Rahul Sharma's Journey</b><br>From: Agra<br>To: Udaipur<br>Departure: 2025-05-03 12:14<br>Arrival: 2025-05-03 13:02<br>Travel Time: 0.8 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_e91544fbb6dfda8c114635b70e719541.setContent(html_1fb720b904ea6f133396c7136a4248cc);
+            
+        
+
+        poly_line_22eb512eba1387f7b75d00c05697076a.bindPopup(popup_e91544fbb6dfda8c114635b70e719541)
+        ;
+
+        
+    
+    
+            var marker_3a71e4460dd88f79af57ac030e0a7938 = L.marker(
+                [25.881050000000002, 75.8603],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_088f36205f4826150c68d7f1a85faa7b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: red;\"\u003e0.8h\u003c/div\u003e"});
+            marker_3a71e4460dd88f79af57ac030e0a7938.setIcon(div_icon_088f36205f4826150c68d7f1a85faa7b);
+        
+    
+        var popup_974b1a204046f196d220793e3c6cab5a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c980c1d24207ca4661ba0a9e2f48ce62 = $(`<div id="html_c980c1d24207ca4661ba0a9e2f48ce62" style="width: 100.0%; height: 100.0%;">Travel Time: 0.8 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_974b1a204046f196d220793e3c6cab5a.setContent(html_c980c1d24207ca4661ba0a9e2f48ce62);
+            
+        
+
+        marker_3a71e4460dd88f79af57ac030e0a7938.bindPopup(popup_974b1a204046f196d220793e3c6cab5a)
+        ;
+
+        
+    
+    
+            var poly_line_ffb95e594825e38b1dcba92bb1a3b0e3 = L.polyline(
+                [[24.5854, 73.7125], [30.0869, 78.2676]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_ccf1d5eec9a3c0b4628fea54def7e9fe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ef7a4617c8d9e01da2157aff3077e301 = $(`<div id="html_ef7a4617c8d9e01da2157aff3077e301" style="width: 100.0%; height: 100.0%;"><b>Rahul Sharma's Journey</b><br>From: Udaipur<br>To: Rishikesh<br>Departure: 2025-05-05 06:02<br>Arrival: 2025-05-05 06:14<br>Travel Time: 0.2 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_ccf1d5eec9a3c0b4628fea54def7e9fe.setContent(html_ef7a4617c8d9e01da2157aff3077e301);
+            
+        
+
+        poly_line_ffb95e594825e38b1dcba92bb1a3b0e3.bindPopup(popup_ccf1d5eec9a3c0b4628fea54def7e9fe)
+        ;
+
+        
+    
+    
+            var marker_bc1c856bc64ff82e49d0995ca9a7d02e = L.marker(
+                [27.33615, 75.99005],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_a5894345a0c2e77bdd9d7cbf102bd2f7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: red;\"\u003e0.2h\u003c/div\u003e"});
+            marker_bc1c856bc64ff82e49d0995ca9a7d02e.setIcon(div_icon_a5894345a0c2e77bdd9d7cbf102bd2f7);
+        
+    
+        var popup_ffb53107e71712acd55b4357285d8095 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_1d106f0f745893eb923a235545d19a0b = $(`<div id="html_1d106f0f745893eb923a235545d19a0b" style="width: 100.0%; height: 100.0%;">Travel Time: 0.2 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_ffb53107e71712acd55b4357285d8095.setContent(html_1d106f0f745893eb923a235545d19a0b);
+            
+        
+
+        marker_bc1c856bc64ff82e49d0995ca9a7d02e.bindPopup(popup_ffb53107e71712acd55b4357285d8095)
+        ;
+
+        
+    
+    
+            var poly_line_ae91704f9236bd7d9fc6a7707c3f7f11 = L.polyline(
+                [[11.9139, 79.8145], [19.076, 72.8777]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_28a0733d7e736c1e9203281d020b87ab = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7812d4123fac8ea95565ccaf0f80ef56 = $(`<div id="html_7812d4123fac8ea95565ccaf0f80ef56" style="width: 100.0%; height: 100.0%;"><b>Priya Patel's Journey</b><br>From: Pondicherry<br>To: Mumbai<br>Departure: 2025-04-25 05:29<br>Arrival: 2025-04-25 06:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 2.0 hours</div>`)[0];
+                popup_28a0733d7e736c1e9203281d020b87ab.setContent(html_7812d4123fac8ea95565ccaf0f80ef56);
+            
+        
+
+        poly_line_ae91704f9236bd7d9fc6a7707c3f7f11.bindPopup(popup_28a0733d7e736c1e9203281d020b87ab)
+        ;
+
+        
+    
+    
+            var marker_a0a713f5ab04867ddfc8c1e77003fe10 = L.marker(
+                [15.49495, 76.3461],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_c72f0ee1c47167b571d4e89001887cca = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: blue;\"\u003e1.0h\u003c/div\u003e"});
+            marker_a0a713f5ab04867ddfc8c1e77003fe10.setIcon(div_icon_c72f0ee1c47167b571d4e89001887cca);
+        
+    
+        var popup_b6a22659fc55e528ba8dcf0b419a8199 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f3316d263f9c1f67bdd21f5c81f4ea2d = $(`<div id="html_f3316d263f9c1f67bdd21f5c81f4ea2d" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 2.0 hours</div>`)[0];
+                popup_b6a22659fc55e528ba8dcf0b419a8199.setContent(html_f3316d263f9c1f67bdd21f5c81f4ea2d);
+            
+        
+
+        marker_a0a713f5ab04867ddfc8c1e77003fe10.bindPopup(popup_b6a22659fc55e528ba8dcf0b419a8199)
+        ;
+
+        
+    
+    
+            var poly_line_6a654abca099778928eed365d9899808 = L.polyline(
+                [[19.076, 72.8777], [15.2993, 74.124]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_33a2d4ad7529004506849edce6d4190c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d9738d0e97985e4785e08a593ac2ec5e = $(`<div id="html_d9738d0e97985e4785e08a593ac2ec5e" style="width: 100.0%; height: 100.0%;"><b>Priya Patel's Journey</b><br>From: Mumbai<br>To: Goa<br>Departure: 2025-04-27 23:29<br>Arrival: 2025-04-28 00:10<br>Travel Time: 0.7 hours<br>Minimum Required Time: 1.0 hours</div>`)[0];
+                popup_33a2d4ad7529004506849edce6d4190c.setContent(html_d9738d0e97985e4785e08a593ac2ec5e);
+            
+        
+
+        poly_line_6a654abca099778928eed365d9899808.bindPopup(popup_33a2d4ad7529004506849edce6d4190c)
+        ;
+
+        
+    
+    
+            var marker_4092bc5c6ff005620bf86fea7704fb87 = L.marker(
+                [17.18765, 73.50085],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_de277473cb5f171c686626e9b6bce8d2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: blue;\"\u003e0.7h\u003c/div\u003e"});
+            marker_4092bc5c6ff005620bf86fea7704fb87.setIcon(div_icon_de277473cb5f171c686626e9b6bce8d2);
+        
+    
+        var popup_a42e006acefcab9edae59e4dd5074e7c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9703ebb3d3f5ce09df60ed4a6ba741e6 = $(`<div id="html_9703ebb3d3f5ce09df60ed4a6ba741e6" style="width: 100.0%; height: 100.0%;">Travel Time: 0.7 hours<br>Minimum Required: 1.0 hours</div>`)[0];
+                popup_a42e006acefcab9edae59e4dd5074e7c.setContent(html_9703ebb3d3f5ce09df60ed4a6ba741e6);
+            
+        
+
+        marker_4092bc5c6ff005620bf86fea7704fb87.bindPopup(popup_a42e006acefcab9edae59e4dd5074e7c)
+        ;
+
+        
+    
+    
+            var poly_line_2ef19a397f42e5787ddd92fe3802decb = L.polyline(
+                [[15.2993, 74.124], [28.7041, 77.1025]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_50632a50b2b9f44386f595e47a107bda = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c47b41155fb762ddf46022b1fae974d7 = $(`<div id="html_c47b41155fb762ddf46022b1fae974d7" style="width: 100.0%; height: 100.0%;"><b>Priya Patel's Journey</b><br>From: Goa<br>To: Delhi<br>Departure: 2025-04-30 03:10<br>Arrival: 2025-04-30 03:13<br>Travel Time: 0.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_50632a50b2b9f44386f595e47a107bda.setContent(html_c47b41155fb762ddf46022b1fae974d7);
+            
+        
+
+        poly_line_2ef19a397f42e5787ddd92fe3802decb.bindPopup(popup_50632a50b2b9f44386f595e47a107bda)
+        ;
+
+        
+    
+    
+            var marker_0f57a317ddcd91c368cb696b8c7d34b0 = L.marker(
+                [22.0017, 75.61325],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_f8e6ac088b8436b44075f537373ca885 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: blue;\"\u003e0.0h\u003c/div\u003e"});
+            marker_0f57a317ddcd91c368cb696b8c7d34b0.setIcon(div_icon_f8e6ac088b8436b44075f537373ca885);
+        
+    
+        var popup_decbb9f29954e5d34394faf2c9be57a2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e86552ad11882f18eda91caa811eede1 = $(`<div id="html_e86552ad11882f18eda91caa811eede1" style="width: 100.0%; height: 100.0%;">Travel Time: 0.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_decbb9f29954e5d34394faf2c9be57a2.setContent(html_e86552ad11882f18eda91caa811eede1);
+            
+        
+
+        marker_0f57a317ddcd91c368cb696b8c7d34b0.bindPopup(popup_decbb9f29954e5d34394faf2c9be57a2)
+        ;
+
+        
+    
+    
+            var poly_line_f2762034a3bbdf0e701290f8deebcebf = L.polyline(
+                [[28.7041, 77.1025], [12.2958, 76.6394]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_4d6ed481b460093f0f0ea1df99d08e2a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d15a6c76633bc41ab2afca5fe6d74d3d = $(`<div id="html_d15a6c76633bc41ab2afca5fe6d74d3d" style="width: 100.0%; height: 100.0%;"><b>Priya Patel's Journey</b><br>From: Delhi<br>To: Mysore<br>Departure: 2025-05-01 14:13<br>Arrival: 2025-05-01 15:11<br>Travel Time: 1.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_4d6ed481b460093f0f0ea1df99d08e2a.setContent(html_d15a6c76633bc41ab2afca5fe6d74d3d);
+            
+        
+
+        poly_line_f2762034a3bbdf0e701290f8deebcebf.bindPopup(popup_4d6ed481b460093f0f0ea1df99d08e2a)
+        ;
+
+        
+    
+    
+            var marker_82bdfcde5074babc7d9d4970c2de0df8 = L.marker(
+                [20.49995, 76.87095],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_840d57db842bc02e83ba8f082116123d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: blue;\"\u003e1.0h\u003c/div\u003e"});
+            marker_82bdfcde5074babc7d9d4970c2de0df8.setIcon(div_icon_840d57db842bc02e83ba8f082116123d);
+        
+    
+        var popup_2096e11f5d291d5e94afb8de3c823955 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7f33777bdfd53e2f0cacdad4f17cfc95 = $(`<div id="html_7f33777bdfd53e2f0cacdad4f17cfc95" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_2096e11f5d291d5e94afb8de3c823955.setContent(html_7f33777bdfd53e2f0cacdad4f17cfc95);
+            
+        
+
+        marker_82bdfcde5074babc7d9d4970c2de0df8.bindPopup(popup_2096e11f5d291d5e94afb8de3c823955)
+        ;
+
+        
+    
+    
+            var poly_line_3ac3c6311c62cd2ee58231bece2189e5 = L.polyline(
+                [[15.2993, 74.124], [26.9124, 75.7873]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_3eb9081383f37877a1e5876191c2cfc4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_29ddb49099bf748543f3f192552887a0 = $(`<div id="html_29ddb49099bf748543f3f192552887a0" style="width: 100.0%; height: 100.0%;"><b>Amit Kumar's Journey</b><br>From: Goa<br>To: Jaipur<br>Departure: 2025-04-25 13:29<br>Arrival: 2025-04-25 13:53<br>Travel Time: 0.4 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_3eb9081383f37877a1e5876191c2cfc4.setContent(html_29ddb49099bf748543f3f192552887a0);
+            
+        
+
+        poly_line_3ac3c6311c62cd2ee58231bece2189e5.bindPopup(popup_3eb9081383f37877a1e5876191c2cfc4)
+        ;
+
+        
+    
+    
+            var marker_a52c511652f5ee4d3025fdf0d263c87b = L.marker(
+                [21.10585, 74.95564999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_a607b558da55d784add2f5740e7923c4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: green;\"\u003e0.4h\u003c/div\u003e"});
+            marker_a52c511652f5ee4d3025fdf0d263c87b.setIcon(div_icon_a607b558da55d784add2f5740e7923c4);
+        
+    
+        var popup_2c8af2378becccb8e05e77e1564e09e3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e65de7e828f8107902a9577bcf3b2c5f = $(`<div id="html_e65de7e828f8107902a9577bcf3b2c5f" style="width: 100.0%; height: 100.0%;">Travel Time: 0.4 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_2c8af2378becccb8e05e77e1564e09e3.setContent(html_e65de7e828f8107902a9577bcf3b2c5f);
+            
+        
+
+        marker_a52c511652f5ee4d3025fdf0d263c87b.bindPopup(popup_2c8af2378becccb8e05e77e1564e09e3)
+        ;
+
+        
+    
+    
+            var poly_line_12e80761293ce344a74504cf189bfb46 = L.polyline(
+                [[26.9124, 75.7873], [15.2993, 74.124]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_e9afb77ae219639c0ac5b1f0ca950c27 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_72b33c9aa9fd2c88bbaffa148e63e056 = $(`<div id="html_72b33c9aa9fd2c88bbaffa148e63e056" style="width: 100.0%; height: 100.0%;"><b>Amit Kumar's Journey</b><br>From: Jaipur<br>To: Goa<br>Departure: 2025-04-27 01:53<br>Arrival: 2025-04-27 02:53<br>Travel Time: 1.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_e9afb77ae219639c0ac5b1f0ca950c27.setContent(html_72b33c9aa9fd2c88bbaffa148e63e056);
+            
+        
+
+        poly_line_12e80761293ce344a74504cf189bfb46.bindPopup(popup_e9afb77ae219639c0ac5b1f0ca950c27)
+        ;
+
+        
+    
+    
+            var marker_4ec834b3b621b78bf7a1348a22b82b13 = L.marker(
+                [21.10585, 74.95564999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_ce5ac197514e0e816ce2b72948090b27 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: green;\"\u003e1.0h\u003c/div\u003e"});
+            marker_4ec834b3b621b78bf7a1348a22b82b13.setIcon(div_icon_ce5ac197514e0e816ce2b72948090b27);
+        
+    
+        var popup_bfa72be0a16e2b9b8859061ac63eae9f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_72b63f07198d77eb7a68499c4c49f973 = $(`<div id="html_72b63f07198d77eb7a68499c4c49f973" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_bfa72be0a16e2b9b8859061ac63eae9f.setContent(html_72b63f07198d77eb7a68499c4c49f973);
+            
+        
+
+        marker_4ec834b3b621b78bf7a1348a22b82b13.bindPopup(popup_bfa72be0a16e2b9b8859061ac63eae9f)
+        ;
+
+        
+    
+    
+            var poly_line_eddef631e89dda8b9b63df7c8a0dc926 = L.polyline(
+                [[15.2993, 74.124], [27.036, 88.2627]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_ec4d1c764df0a886cf04f236e78e3d84 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6a018d3fd058098b9b5fe0fb5c62bfaa = $(`<div id="html_6a018d3fd058098b9b5fe0fb5c62bfaa" style="width: 100.0%; height: 100.0%;"><b>Amit Kumar's Journey</b><br>From: Goa<br>To: Darjeeling<br>Departure: 2025-04-29 09:53<br>Arrival: 2025-04-29 10:45<br>Travel Time: 0.9 hours<br>Minimum Required Time: 4.5 hours</div>`)[0];
+                popup_ec4d1c764df0a886cf04f236e78e3d84.setContent(html_6a018d3fd058098b9b5fe0fb5c62bfaa);
+            
+        
+
+        poly_line_eddef631e89dda8b9b63df7c8a0dc926.bindPopup(popup_ec4d1c764df0a886cf04f236e78e3d84)
+        ;
+
+        
+    
+    
+            var marker_705c2b63cd465969c38ee9bf1ca7ffba = L.marker(
+                [21.167650000000002, 81.19335],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_a6e0536e38eb410e907b97d21412335b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: green;\"\u003e0.9h\u003c/div\u003e"});
+            marker_705c2b63cd465969c38ee9bf1ca7ffba.setIcon(div_icon_a6e0536e38eb410e907b97d21412335b);
+        
+    
+        var popup_df8d93b802b55e3e832ce31305a4a52d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c842b6e962446f4462f9c4ce218962cd = $(`<div id="html_c842b6e962446f4462f9c4ce218962cd" style="width: 100.0%; height: 100.0%;">Travel Time: 0.9 hours<br>Minimum Required: 4.5 hours</div>`)[0];
+                popup_df8d93b802b55e3e832ce31305a4a52d.setContent(html_c842b6e962446f4462f9c4ce218962cd);
+            
+        
+
+        marker_705c2b63cd465969c38ee9bf1ca7ffba.bindPopup(popup_df8d93b802b55e3e832ce31305a4a52d)
+        ;
+
+        
+    
+    
+            var poly_line_ab7030afd66b931f35a16c4e578d8f2e = L.polyline(
+                [[27.036, 88.2627], [12.2958, 76.6394]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_443c52142970e75b802bac7c6f0e4385 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f86f0c10cdfcaeb908495f8f372fed1c = $(`<div id="html_f86f0c10cdfcaeb908495f8f372fed1c" style="width: 100.0%; height: 100.0%;"><b>Amit Kumar's Journey</b><br>From: Darjeeling<br>To: Mysore<br>Departure: 2025-05-01 18:45<br>Arrival: 2025-05-01 19:45<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_443c52142970e75b802bac7c6f0e4385.setContent(html_f86f0c10cdfcaeb908495f8f372fed1c);
+            
+        
+
+        poly_line_ab7030afd66b931f35a16c4e578d8f2e.bindPopup(popup_443c52142970e75b802bac7c6f0e4385)
+        ;
+
+        
+    
+    
+            var marker_2d37eff11a970eb541f3d0ab643591f4 = L.marker(
+                [19.6659, 82.45105],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_aa23db190cbb53378f008048072de2ba = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: green;\"\u003e1.0h\u003c/div\u003e"});
+            marker_2d37eff11a970eb541f3d0ab643591f4.setIcon(div_icon_aa23db190cbb53378f008048072de2ba);
+        
+    
+        var popup_203887c4181ebe3e496445d792c67444 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7215ba6fe9d70aee9b69c4883f9780f7 = $(`<div id="html_7215ba6fe9d70aee9b69c4883f9780f7" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_203887c4181ebe3e496445d792c67444.setContent(html_7215ba6fe9d70aee9b69c4883f9780f7);
+            
+        
+
+        marker_2d37eff11a970eb541f3d0ab643591f4.bindPopup(popup_203887c4181ebe3e496445d792c67444)
+        ;
+
+        
+    
+    
+            var poly_line_00120055b8868399a0098e6f18504120 = L.polyline(
+                [[10.8505, 76.2711], [31.634, 74.8723]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_49f69a8284dba18aca69450d2d6e058c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c0942158b8c9805da42af2199a82c397 = $(`<div id="html_c0942158b8c9805da42af2199a82c397" style="width: 100.0%; height: 100.0%;"><b>Neha Gupta's Journey</b><br>From: Kerala<br>To: Amritsar<br>Departure: 2025-04-24 05:29<br>Arrival: 2025-04-24 06:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_49f69a8284dba18aca69450d2d6e058c.setContent(html_c0942158b8c9805da42af2199a82c397);
+            
+        
+
+        poly_line_00120055b8868399a0098e6f18504120.bindPopup(popup_49f69a8284dba18aca69450d2d6e058c)
+        ;
+
+        
+    
+    
+            var marker_f503c2c4d4cc8e5e93b630bf62d2ae46 = L.marker(
+                [21.24225, 75.57169999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_38aa571dfbafb8282cbcb21066f2bb6b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: purple;\"\u003e1.0h\u003c/div\u003e"});
+            marker_f503c2c4d4cc8e5e93b630bf62d2ae46.setIcon(div_icon_38aa571dfbafb8282cbcb21066f2bb6b);
+        
+    
+        var popup_bb45be103929e91ca4907f1b8612aa9a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_787bf541ec23e5ca368da14ca53aaba0 = $(`<div id="html_787bf541ec23e5ca368da14ca53aaba0" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_bb45be103929e91ca4907f1b8612aa9a.setContent(html_787bf541ec23e5ca368da14ca53aaba0);
+            
+        
+
+        marker_f503c2c4d4cc8e5e93b630bf62d2ae46.bindPopup(popup_bb45be103929e91ca4907f1b8612aa9a)
+        ;
+
+        
+    
+    
+            var poly_line_4d37927c7a1db5d5a334db600f1a3e9c = L.polyline(
+                [[31.634, 74.8723], [27.1767, 78.0081]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_6d216c66baba51e2b21bfb35a74df571 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00a63cd841a4c80110df2a35e3beb4ec = $(`<div id="html_00a63cd841a4c80110df2a35e3beb4ec" style="width: 100.0%; height: 100.0%;"><b>Neha Gupta's Journey</b><br>From: Amritsar<br>To: Agra<br>Departure: 2025-04-26 07:29<br>Arrival: 2025-04-26 08:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_6d216c66baba51e2b21bfb35a74df571.setContent(html_00a63cd841a4c80110df2a35e3beb4ec);
+            
+        
+
+        poly_line_4d37927c7a1db5d5a334db600f1a3e9c.bindPopup(popup_6d216c66baba51e2b21bfb35a74df571)
+        ;
+
+        
+    
+    
+            var marker_d012c905789113932f0ec340f0f5fe9c = L.marker(
+                [29.40535, 76.4402],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_e6079bba66f78ab3fe6873d44cfb5915 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: purple;\"\u003e1.0h\u003c/div\u003e"});
+            marker_d012c905789113932f0ec340f0f5fe9c.setIcon(div_icon_e6079bba66f78ab3fe6873d44cfb5915);
+        
+    
+        var popup_446fdafcaf6194d14ee89bbc315c66fe = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e8b64b82816ffda4e6c453ecceb38109 = $(`<div id="html_e8b64b82816ffda4e6c453ecceb38109" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_446fdafcaf6194d14ee89bbc315c66fe.setContent(html_e8b64b82816ffda4e6c453ecceb38109);
+            
+        
+
+        marker_d012c905789113932f0ec340f0f5fe9c.bindPopup(popup_446fdafcaf6194d14ee89bbc315c66fe)
+        ;
+
+        
+    
+    
+            var poly_line_31753644011759768cb288966f86ac77 = L.polyline(
+                [[27.1767, 78.0081], [31.634, 74.8723]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_9b24a5c4215024842e7de9e6f896dd32 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9a581fa9329602f480dc7eff6dfb093e = $(`<div id="html_9a581fa9329602f480dc7eff6dfb093e" style="width: 100.0%; height: 100.0%;"><b>Vikram Singh's Journey</b><br>From: Agra<br>To: Amritsar<br>Departure: 2025-04-23 16:29<br>Arrival: 2025-04-23 17:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_9b24a5c4215024842e7de9e6f896dd32.setContent(html_9a581fa9329602f480dc7eff6dfb093e);
+            
+        
+
+        poly_line_31753644011759768cb288966f86ac77.bindPopup(popup_9b24a5c4215024842e7de9e6f896dd32)
+        ;
+
+        
+    
+    
+            var marker_c2ea75da5837d482461c634e791b0777 = L.marker(
+                [29.40535, 76.4402],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_4245041067e6b8feda2c6ce01f595af1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: orange;\"\u003e1.0h\u003c/div\u003e"});
+            marker_c2ea75da5837d482461c634e791b0777.setIcon(div_icon_4245041067e6b8feda2c6ce01f595af1);
+        
+    
+        var popup_4bf2df0f510d63b64b21d029728e4486 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a127398f3852d491dd18cd3106a66897 = $(`<div id="html_a127398f3852d491dd18cd3106a66897" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_4bf2df0f510d63b64b21d029728e4486.setContent(html_a127398f3852d491dd18cd3106a66897);
+            
+        
+
+        marker_c2ea75da5837d482461c634e791b0777.bindPopup(popup_4bf2df0f510d63b64b21d029728e4486)
+        ;
+
+        
+    
+    
+            var poly_line_56641e77b157e6a7f7aa053601f1d8d5 = L.polyline(
+                [[31.634, 74.8723], [10.8505, 76.2711]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_d0e95a0c2fe1c487aafc4bbdf36571a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_55d5c5c149e477f98bd75e0ed4997eee = $(`<div id="html_55d5c5c149e477f98bd75e0ed4997eee" style="width: 100.0%; height: 100.0%;"><b>Vikram Singh's Journey</b><br>From: Amritsar<br>To: Kerala<br>Departure: 2025-04-25 09:29<br>Arrival: 2025-04-25 10:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_d0e95a0c2fe1c487aafc4bbdf36571a6.setContent(html_55d5c5c149e477f98bd75e0ed4997eee);
+            
+        
+
+        poly_line_56641e77b157e6a7f7aa053601f1d8d5.bindPopup(popup_d0e95a0c2fe1c487aafc4bbdf36571a6)
+        ;
+
+        
+    
+    
+            var marker_bc6ef35078ce893310f6c4487a32b568 = L.marker(
+                [21.24225, 75.57169999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_b7eb0db5b4041e4a50795fbb031de1ff = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: orange;\"\u003e1.0h\u003c/div\u003e"});
+            marker_bc6ef35078ce893310f6c4487a32b568.setIcon(div_icon_b7eb0db5b4041e4a50795fbb031de1ff);
+        
+    
+        var popup_cd36e58d6f9fef6fadcbe1a6e916ee05 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8e65f36863e90b3604b66040b54d6047 = $(`<div id="html_8e65f36863e90b3604b66040b54d6047" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_cd36e58d6f9fef6fadcbe1a6e916ee05.setContent(html_8e65f36863e90b3604b66040b54d6047);
+            
+        
+
+        marker_bc6ef35078ce893310f6c4487a32b568.bindPopup(popup_cd36e58d6f9fef6fadcbe1a6e916ee05)
+        ;
+
+        
+    
+    
+            var poly_line_6042e4d033254cd380404cff5433d613 = L.polyline(
+                [[10.8505, 76.2711], [26.9124, 75.7873]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_cfd0f5fa96f1f658f80c76b3f3748b4b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b4d15ec80a019b99743dc0f3df61e037 = $(`<div id="html_b4d15ec80a019b99743dc0f3df61e037" style="width: 100.0%; height: 100.0%;"><b>Vikram Singh's Journey</b><br>From: Kerala<br>To: Jaipur<br>Departure: 2025-04-27 15:29<br>Arrival: 2025-04-27 16:14<br>Travel Time: 0.7 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_cfd0f5fa96f1f658f80c76b3f3748b4b.setContent(html_b4d15ec80a019b99743dc0f3df61e037);
+            
+        
+
+        poly_line_6042e4d033254cd380404cff5433d613.bindPopup(popup_cfd0f5fa96f1f658f80c76b3f3748b4b)
+        ;
+
+        
+    
+    
+            var marker_5bbb5eec5f09bf0cee2bd5d411d2044e = L.marker(
+                [18.88145, 76.0292],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_8ea6e5843b34f6a5d4133347c9c52a2e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: orange;\"\u003e0.7h\u003c/div\u003e"});
+            marker_5bbb5eec5f09bf0cee2bd5d411d2044e.setIcon(div_icon_8ea6e5843b34f6a5d4133347c9c52a2e);
+        
+    
+        var popup_a634c52eab8b10c88ce04ed539ebae71 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_af0680e2577f804b1d36f5eed488a06b = $(`<div id="html_af0680e2577f804b1d36f5eed488a06b" style="width: 100.0%; height: 100.0%;">Travel Time: 0.7 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_a634c52eab8b10c88ce04ed539ebae71.setContent(html_af0680e2577f804b1d36f5eed488a06b);
+            
+        
+
+        marker_5bbb5eec5f09bf0cee2bd5d411d2044e.bindPopup(popup_a634c52eab8b10c88ce04ed539ebae71)
+        ;
+
+        
+    
+    
+            var poly_line_5c23743a2395620d1239b07f0deef081 = L.polyline(
+                [[26.9124, 75.7873], [15.2993, 74.124]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_081f3ff177462a10e9cae9aa09381ec1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7d84eb3d28c5b11d8c9a63f081608df = $(`<div id="html_d7d84eb3d28c5b11d8c9a63f081608df" style="width: 100.0%; height: 100.0%;"><b>Vikram Singh's Journey</b><br>From: Jaipur<br>To: Goa<br>Departure: 2025-04-30 13:14<br>Arrival: 2025-04-30 14:14<br>Travel Time: 1.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_081f3ff177462a10e9cae9aa09381ec1.setContent(html_d7d84eb3d28c5b11d8c9a63f081608df);
+            
+        
+
+        poly_line_5c23743a2395620d1239b07f0deef081.bindPopup(popup_081f3ff177462a10e9cae9aa09381ec1)
+        ;
+
+        
+    
+    
+            var marker_f3890499d8e8efa01fa144949a171364 = L.marker(
+                [21.10585, 74.95564999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_318ad2d500972091fa9e83d08de0cda0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: orange;\"\u003e1.0h\u003c/div\u003e"});
+            marker_f3890499d8e8efa01fa144949a171364.setIcon(div_icon_318ad2d500972091fa9e83d08de0cda0);
+        
+    
+        var popup_ba51db5e58aaa0909c573e23177c99f1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ec2370aeb65a224f7d42b898977e3bfa = $(`<div id="html_ec2370aeb65a224f7d42b898977e3bfa" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_ba51db5e58aaa0909c573e23177c99f1.setContent(html_ec2370aeb65a224f7d42b898977e3bfa);
+            
+        
+
+        marker_f3890499d8e8efa01fa144949a171364.bindPopup(popup_ba51db5e58aaa0909c573e23177c99f1)
+        ;
+
+        
+    
+    
+            var poly_line_be7e69587246bcbea004d7db5b148233 = L.polyline(
+                [[15.2993, 74.124], [11.9139, 79.8145]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_ce742cfe129cf31d9c12ff1411effc82 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ab6420cc2d7300772783e6516c0219ff = $(`<div id="html_ab6420cc2d7300772783e6516c0219ff" style="width: 100.0%; height: 100.0%;"><b>Vikram Singh's Journey</b><br>From: Goa<br>To: Pondicherry<br>Departure: 2025-05-02 13:14<br>Arrival: 2025-05-02 13:54<br>Travel Time: 0.7 hours<br>Minimum Required Time: 2.0 hours</div>`)[0];
+                popup_ce742cfe129cf31d9c12ff1411effc82.setContent(html_ab6420cc2d7300772783e6516c0219ff);
+            
+        
+
+        poly_line_be7e69587246bcbea004d7db5b148233.bindPopup(popup_ce742cfe129cf31d9c12ff1411effc82)
+        ;
+
+        
+    
+    
+            var marker_38803865f3439b0d5c772f117b22e9ea = L.marker(
+                [13.6066, 76.96924999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_f03c5e805df879b812fe2ed31e245263 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: orange;\"\u003e0.7h\u003c/div\u003e"});
+            marker_38803865f3439b0d5c772f117b22e9ea.setIcon(div_icon_f03c5e805df879b812fe2ed31e245263);
+        
+    
+        var popup_06722e0a12a83398313515d6a4a25e3b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d5735e61a269daa6e5b7002fe73e1820 = $(`<div id="html_d5735e61a269daa6e5b7002fe73e1820" style="width: 100.0%; height: 100.0%;">Travel Time: 0.7 hours<br>Minimum Required: 2.0 hours</div>`)[0];
+                popup_06722e0a12a83398313515d6a4a25e3b.setContent(html_d5735e61a269daa6e5b7002fe73e1820);
+            
+        
+
+        marker_38803865f3439b0d5c772f117b22e9ea.bindPopup(popup_06722e0a12a83398313515d6a4a25e3b)
+        ;
+
+        
+    
+    
+            var poly_line_e0bf5a3ef89418c1984881e50acb4f2d = L.polyline(
+                [[11.9139, 79.8145], [11.9139, 79.8145]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_c3287627e3712742a7cefe9345727d04 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7b419851553365fbf0ec3b241c6b6b3d = $(`<div id="html_7b419851553365fbf0ec3b241c6b6b3d" style="width: 100.0%; height: 100.0%;"><b>Ananya Reddy's Journey</b><br>From: Pondicherry<br>To: Pondicherry<br>Departure: 2025-04-29 08:29<br>Arrival: 2025-04-29 09:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_c3287627e3712742a7cefe9345727d04.setContent(html_7b419851553365fbf0ec3b241c6b6b3d);
+            
+        
+
+        poly_line_e0bf5a3ef89418c1984881e50acb4f2d.bindPopup(popup_c3287627e3712742a7cefe9345727d04)
+        ;
+
+        
+    
+    
+            var marker_47c9635791f900e3d5565a1028e33de9 = L.marker(
+                [11.9139, 79.8145],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_3e7dd6c69096f740641851dbeb0ab100 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkred;\"\u003e1.0h\u003c/div\u003e"});
+            marker_47c9635791f900e3d5565a1028e33de9.setIcon(div_icon_3e7dd6c69096f740641851dbeb0ab100);
+        
+    
+        var popup_3f3bf2c7ff8c27420eb7ee0cd5b1ff49 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_89a59073da743a6bd30a91ddbaf642ca = $(`<div id="html_89a59073da743a6bd30a91ddbaf642ca" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_3f3bf2c7ff8c27420eb7ee0cd5b1ff49.setContent(html_89a59073da743a6bd30a91ddbaf642ca);
+            
+        
+
+        marker_47c9635791f900e3d5565a1028e33de9.bindPopup(popup_3f3bf2c7ff8c27420eb7ee0cd5b1ff49)
+        ;
+
+        
+    
+    
+            var poly_line_a2da26e2f4332cfefdbecb3354cf3866 = L.polyline(
+                [[11.9139, 79.8145], [10.8505, 76.2711]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_7e9030dde2408e2a84468254f84de636 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_db285339420647d60756a2267bdc343c = $(`<div id="html_db285339420647d60756a2267bdc343c" style="width: 100.0%; height: 100.0%;"><b>Ananya Reddy's Journey</b><br>From: Pondicherry<br>To: Kerala<br>Departure: 2025-05-01 06:29<br>Arrival: 2025-05-01 07:29<br>Travel Time: 1.0 hours<br>Minimum Required Time: 2.0 hours</div>`)[0];
+                popup_7e9030dde2408e2a84468254f84de636.setContent(html_db285339420647d60756a2267bdc343c);
+            
+        
+
+        poly_line_a2da26e2f4332cfefdbecb3354cf3866.bindPopup(popup_7e9030dde2408e2a84468254f84de636)
+        ;
+
+        
+    
+    
+            var marker_371748f0ccd31150a3ed00060957cdc7 = L.marker(
+                [11.382200000000001, 78.0428],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_9e989de0d359d69e6d9c07b4407164eb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkred;\"\u003e1.0h\u003c/div\u003e"});
+            marker_371748f0ccd31150a3ed00060957cdc7.setIcon(div_icon_9e989de0d359d69e6d9c07b4407164eb);
+        
+    
+        var popup_652603c6b97dcae43094e2f9ab97acf5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a97f3773adfb34931dbdbf6bdcd72793 = $(`<div id="html_a97f3773adfb34931dbdbf6bdcd72793" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 2.0 hours</div>`)[0];
+                popup_652603c6b97dcae43094e2f9ab97acf5.setContent(html_a97f3773adfb34931dbdbf6bdcd72793);
+            
+        
+
+        marker_371748f0ccd31150a3ed00060957cdc7.bindPopup(popup_652603c6b97dcae43094e2f9ab97acf5)
+        ;
+
+        
+    
+    
+            var poly_line_9e6d3d8fb0306153fc1f71377f1222db = L.polyline(
+                [[10.8505, 76.2711], [12.9716, 77.5946]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_374d05ef7d9e447c5603ee1585be8cf0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4c5b68ce562a365ccba8523d86b5da3b = $(`<div id="html_4c5b68ce562a365ccba8523d86b5da3b" style="width: 100.0%; height: 100.0%;"><b>Ananya Reddy's Journey</b><br>From: Kerala<br>To: Bangalore<br>Departure: 2025-05-02 10:29<br>Arrival: 2025-05-02 11:05<br>Travel Time: 0.6 hours<br>Minimum Required Time: 1.0 hours</div>`)[0];
+                popup_374d05ef7d9e447c5603ee1585be8cf0.setContent(html_4c5b68ce562a365ccba8523d86b5da3b);
+            
+        
+
+        poly_line_9e6d3d8fb0306153fc1f71377f1222db.bindPopup(popup_374d05ef7d9e447c5603ee1585be8cf0)
+        ;
+
+        
+    
+    
+            var marker_60716b300114539528f4af42eb508313 = L.marker(
+                [11.91105, 76.93285],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_063e41028bb226031dc6b5cd021cdf55 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkred;\"\u003e0.6h\u003c/div\u003e"});
+            marker_60716b300114539528f4af42eb508313.setIcon(div_icon_063e41028bb226031dc6b5cd021cdf55);
+        
+    
+        var popup_ab3c9cb136d8b12e457df78a78d08a84 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7493a2930d227223707f957f20c01814 = $(`<div id="html_7493a2930d227223707f957f20c01814" style="width: 100.0%; height: 100.0%;">Travel Time: 0.6 hours<br>Minimum Required: 1.0 hours</div>`)[0];
+                popup_ab3c9cb136d8b12e457df78a78d08a84.setContent(html_7493a2930d227223707f957f20c01814);
+            
+        
+
+        marker_60716b300114539528f4af42eb508313.bindPopup(popup_ab3c9cb136d8b12e457df78a78d08a84)
+        ;
+
+        
+    
+    
+            var poly_line_92db0349de4f3d1ac56d9fe80056618b = L.polyline(
+                [[12.9716, 77.5946], [31.1048, 77.1734]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_6a69c594404b5f0a5bfcd32ef487418b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_77a13cba2a5629a298416125ecbd92fc = $(`<div id="html_77a13cba2a5629a298416125ecbd92fc" style="width: 100.0%; height: 100.0%;"><b>Ananya Reddy's Journey</b><br>From: Bangalore<br>To: Shimla<br>Departure: 2025-05-04 22:05<br>Arrival: 2025-05-04 22:52<br>Travel Time: 0.8 hours<br>Minimum Required Time: 3.5 hours</div>`)[0];
+                popup_6a69c594404b5f0a5bfcd32ef487418b.setContent(html_77a13cba2a5629a298416125ecbd92fc);
+            
+        
+
+        poly_line_92db0349de4f3d1ac56d9fe80056618b.bindPopup(popup_6a69c594404b5f0a5bfcd32ef487418b)
+        ;
+
+        
+    
+    
+            var marker_47c0c7e2b01b0ba6e1c111273ad73b49 = L.marker(
+                [22.0382, 77.384],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_76e570a2d5fdb28a12fac2ba40002ef2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkred;\"\u003e0.8h\u003c/div\u003e"});
+            marker_47c0c7e2b01b0ba6e1c111273ad73b49.setIcon(div_icon_76e570a2d5fdb28a12fac2ba40002ef2);
+        
+    
+        var popup_7b5fecf05e466a130a8dbd7bfe7cf048 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_540c398a6b8ac0136038203bb063aa6a = $(`<div id="html_540c398a6b8ac0136038203bb063aa6a" style="width: 100.0%; height: 100.0%;">Travel Time: 0.8 hours<br>Minimum Required: 3.5 hours</div>`)[0];
+                popup_7b5fecf05e466a130a8dbd7bfe7cf048.setContent(html_540c398a6b8ac0136038203bb063aa6a);
+            
+        
+
+        marker_47c0c7e2b01b0ba6e1c111273ad73b49.bindPopup(popup_7b5fecf05e466a130a8dbd7bfe7cf048)
+        ;
+
+        
+    
+    
+            var poly_line_7573b3f8b92ab7be0f6ee99c50666a7f = L.polyline(
+                [[31.1048, 77.1734], [12.9716, 77.5946]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_fca62feb9a7870c31b5caf0db505f629 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c11e46c135856c98963d01981f564024 = $(`<div id="html_c11e46c135856c98963d01981f564024" style="width: 100.0%; height: 100.0%;"><b>Ananya Reddy's Journey</b><br>From: Shimla<br>To: Bangalore<br>Departure: 2025-05-07 07:52<br>Arrival: 2025-05-07 08:25<br>Travel Time: 0.6 hours<br>Minimum Required Time: 3.5 hours</div>`)[0];
+                popup_fca62feb9a7870c31b5caf0db505f629.setContent(html_c11e46c135856c98963d01981f564024);
+            
+        
+
+        poly_line_7573b3f8b92ab7be0f6ee99c50666a7f.bindPopup(popup_fca62feb9a7870c31b5caf0db505f629)
+        ;
+
+        
+    
+    
+            var marker_1454fe4a44419e414b7a4425b808d289 = L.marker(
+                [22.0382, 77.384],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_9764e5190b4272cb3a6e1d74d773ca17 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkred;\"\u003e0.6h\u003c/div\u003e"});
+            marker_1454fe4a44419e414b7a4425b808d289.setIcon(div_icon_9764e5190b4272cb3a6e1d74d773ca17);
+        
+    
+        var popup_47f40d8f1572675669b5f3835479153d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4927595b15e1d624ab0502bf5124e490 = $(`<div id="html_4927595b15e1d624ab0502bf5124e490" style="width: 100.0%; height: 100.0%;">Travel Time: 0.6 hours<br>Minimum Required: 3.5 hours</div>`)[0];
+                popup_47f40d8f1572675669b5f3835479153d.setContent(html_4927595b15e1d624ab0502bf5124e490);
+            
+        
+
+        marker_1454fe4a44419e414b7a4425b808d289.bindPopup(popup_47f40d8f1572675669b5f3835479153d)
+        ;
+
+        
+    
+    
+            var poly_line_11bbfd233ddc7e7bb7699863b1ccc8f2 = L.polyline(
+                [[30.0869, 78.2676], [24.5854, 73.7125]],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_a15d06f34996f865f62aaf8491e0636e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d54a719d77db7ce6109692173360b96f = $(`<div id="html_d54a719d77db7ce6109692173360b96f" style="width: 100.0%; height: 100.0%;"><b>Rohan Mehta's Journey</b><br>From: Rishikesh<br>To: Udaipur<br>Departure: 2025-04-24 00:29<br>Arrival: 2025-04-24 01:09<br>Travel Time: 0.7 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_a15d06f34996f865f62aaf8491e0636e.setContent(html_d54a719d77db7ce6109692173360b96f);
+            
+        
+
+        poly_line_11bbfd233ddc7e7bb7699863b1ccc8f2.bindPopup(popup_a15d06f34996f865f62aaf8491e0636e)
+        ;
+
+        
+    
+    
+            var marker_a477024b032411b07c41ee9d7b75dea1 = L.marker(
+                [27.33615, 75.99005],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_9c4f901412913d3ae00f154d39bd7ce2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: lightred;\"\u003e0.7h\u003c/div\u003e"});
+            marker_a477024b032411b07c41ee9d7b75dea1.setIcon(div_icon_9c4f901412913d3ae00f154d39bd7ce2);
+        
+    
+        var popup_5873f8ad6e39212a934b42ceaa1a04dc = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2d549610d2dacff4bcbcba1383c86f1a = $(`<div id="html_2d549610d2dacff4bcbcba1383c86f1a" style="width: 100.0%; height: 100.0%;">Travel Time: 0.7 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_5873f8ad6e39212a934b42ceaa1a04dc.setContent(html_2d549610d2dacff4bcbcba1383c86f1a);
+            
+        
+
+        marker_a477024b032411b07c41ee9d7b75dea1.bindPopup(popup_5873f8ad6e39212a934b42ceaa1a04dc)
+        ;
+
+        
+    
+    
+            var poly_line_17755eba7910bca2955b7e891193733a = L.polyline(
+                [[24.5854, 73.7125], [11.9139, 79.8145]],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_2eca7777fa3b25b57eab8fa620238c95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0edfae62cb1dfe615109e1eb7229c477 = $(`<div id="html_0edfae62cb1dfe615109e1eb7229c477" style="width: 100.0%; height: 100.0%;"><b>Rohan Mehta's Journey</b><br>From: Udaipur<br>To: Pondicherry<br>Departure: 2025-04-25 01:09<br>Arrival: 2025-04-25 01:39<br>Travel Time: 0.5 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_2eca7777fa3b25b57eab8fa620238c95.setContent(html_0edfae62cb1dfe615109e1eb7229c477);
+            
+        
+
+        poly_line_17755eba7910bca2955b7e891193733a.bindPopup(popup_2eca7777fa3b25b57eab8fa620238c95)
+        ;
+
+        
+    
+    
+            var marker_abb2c15ce2ed13252521a386b905879d = L.marker(
+                [18.24965, 76.7635],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_a378b2aae57245ec35557ba892787507 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: lightred;\"\u003e0.5h\u003c/div\u003e"});
+            marker_abb2c15ce2ed13252521a386b905879d.setIcon(div_icon_a378b2aae57245ec35557ba892787507);
+        
+    
+        var popup_d0ff1649eb3e9ead9504e53f053c404e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_adedd93c3c8bedc7a6bcf94bf2d22586 = $(`<div id="html_adedd93c3c8bedc7a6bcf94bf2d22586" style="width: 100.0%; height: 100.0%;">Travel Time: 0.5 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_d0ff1649eb3e9ead9504e53f053c404e.setContent(html_adedd93c3c8bedc7a6bcf94bf2d22586);
+            
+        
+
+        marker_abb2c15ce2ed13252521a386b905879d.bindPopup(popup_d0ff1649eb3e9ead9504e53f053c404e)
+        ;
+
+        
+    
+    
+            var poly_line_c1aa93d30ceb1aa1ee248d689f727d6b = L.polyline(
+                [[12.2958, 76.6394], [31.1048, 77.1734]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_64ce1018b77c6e4dbbe181963d1c9b45 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_477e5505c3af924aa1bbda4264478828 = $(`<div id="html_477e5505c3af924aa1bbda4264478828" style="width: 100.0%; height: 100.0%;"><b>Sneha Joshi's Journey</b><br>From: Mysore<br>To: Shimla<br>Departure: 2025-04-22 14:29<br>Arrival: 2025-04-22 14:49<br>Travel Time: 0.3 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_64ce1018b77c6e4dbbe181963d1c9b45.setContent(html_477e5505c3af924aa1bbda4264478828);
+            
+        
+
+        poly_line_c1aa93d30ceb1aa1ee248d689f727d6b.bindPopup(popup_64ce1018b77c6e4dbbe181963d1c9b45)
+        ;
+
+        
+    
+    
+            var marker_7536983e0b4e6a55b9fd23937306b280 = L.marker(
+                [21.7003, 76.90639999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_17fae4311673559ad64cd13797be7785 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: beige;\"\u003e0.3h\u003c/div\u003e"});
+            marker_7536983e0b4e6a55b9fd23937306b280.setIcon(div_icon_17fae4311673559ad64cd13797be7785);
+        
+    
+        var popup_67d0db2e6affcd3fe6e707abc89444d2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_def13d595dbeb597c1867dcb121266a8 = $(`<div id="html_def13d595dbeb597c1867dcb121266a8" style="width: 100.0%; height: 100.0%;">Travel Time: 0.3 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_67d0db2e6affcd3fe6e707abc89444d2.setContent(html_def13d595dbeb597c1867dcb121266a8);
+            
+        
+
+        marker_7536983e0b4e6a55b9fd23937306b280.bindPopup(popup_67d0db2e6affcd3fe6e707abc89444d2)
+        ;
+
+        
+    
+    
+            var poly_line_9c599f5b2919f09522843a9c42335c9f = L.polyline(
+                [[31.1048, 77.1734], [24.5854, 73.7125]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_91aeceb1471b089d0e9610a04ebfdcf4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5940c07f293e40700a9ab582071aacb6 = $(`<div id="html_5940c07f293e40700a9ab582071aacb6" style="width: 100.0%; height: 100.0%;"><b>Sneha Joshi's Journey</b><br>From: Shimla<br>To: Udaipur<br>Departure: 2025-04-25 02:49<br>Arrival: 2025-04-25 02:52<br>Travel Time: 0.1 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_91aeceb1471b089d0e9610a04ebfdcf4.setContent(html_5940c07f293e40700a9ab582071aacb6);
+            
+        
+
+        poly_line_9c599f5b2919f09522843a9c42335c9f.bindPopup(popup_91aeceb1471b089d0e9610a04ebfdcf4)
+        ;
+
+        
+    
+    
+            var marker_6c06b4593a6c1c7e543695fb627d93a6 = L.marker(
+                [27.845100000000002, 75.44295],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_5fe66e238da13a8b415068829b41f0d1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: beige;\"\u003e0.1h\u003c/div\u003e"});
+            marker_6c06b4593a6c1c7e543695fb627d93a6.setIcon(div_icon_5fe66e238da13a8b415068829b41f0d1);
+        
+    
+        var popup_ce6cb3db0348dcc439bebb825e1b3427 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_91ff37a0dcf7e7b8dd86ca84f14b437c = $(`<div id="html_91ff37a0dcf7e7b8dd86ca84f14b437c" style="width: 100.0%; height: 100.0%;">Travel Time: 0.1 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_ce6cb3db0348dcc439bebb825e1b3427.setContent(html_91ff37a0dcf7e7b8dd86ca84f14b437c);
+            
+        
+
+        marker_6c06b4593a6c1c7e543695fb627d93a6.bindPopup(popup_ce6cb3db0348dcc439bebb825e1b3427)
+        ;
+
+        
+    
+    
+            var poly_line_11f4b953073a051cfd0e9fe528cfb178 = L.polyline(
+                [[24.5854, 73.7125], [12.9716, 77.5946]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_73b9fa3d03d71d9f9538e79990e4df68 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_30f02b0222b10237761be78a89761828 = $(`<div id="html_30f02b0222b10237761be78a89761828" style="width: 100.0%; height: 100.0%;"><b>Sneha Joshi's Journey</b><br>From: Udaipur<br>To: Bangalore<br>Departure: 2025-04-26 10:52<br>Arrival: 2025-04-26 11:52<br>Travel Time: 1.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_73b9fa3d03d71d9f9538e79990e4df68.setContent(html_30f02b0222b10237761be78a89761828);
+            
+        
+
+        poly_line_11f4b953073a051cfd0e9fe528cfb178.bindPopup(popup_73b9fa3d03d71d9f9538e79990e4df68)
+        ;
+
+        
+    
+    
+            var marker_94c15a9effce58eae1d64d1175a5e7a7 = L.marker(
+                [18.7785, 75.65355],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_cdae40f3e8abf83cfcff5684c5bdd056 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: beige;\"\u003e1.0h\u003c/div\u003e"});
+            marker_94c15a9effce58eae1d64d1175a5e7a7.setIcon(div_icon_cdae40f3e8abf83cfcff5684c5bdd056);
+        
+    
+        var popup_e53f18e2c594f1cd356c31c422aff5fa = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_abf3cf3629a556d48f441a57623864ca = $(`<div id="html_abf3cf3629a556d48f441a57623864ca" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_e53f18e2c594f1cd356c31c422aff5fa.setContent(html_abf3cf3629a556d48f441a57623864ca);
+            
+        
+
+        marker_94c15a9effce58eae1d64d1175a5e7a7.bindPopup(popup_e53f18e2c594f1cd356c31c422aff5fa)
+        ;
+
+        
+    
+    
+            var poly_line_504668060ef2c9d10215d0b675ae185a = L.polyline(
+                [[12.9716, 77.5946], [27.036, 88.2627]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_9cbb45d06eb067b437f14d341c44c9bf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2cadb1d58026bc68b09b28a6674a0da1 = $(`<div id="html_2cadb1d58026bc68b09b28a6674a0da1" style="width: 100.0%; height: 100.0%;"><b>Sneha Joshi's Journey</b><br>From: Bangalore<br>To: Darjeeling<br>Departure: 2025-04-27 14:52<br>Arrival: 2025-04-27 15:52<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_9cbb45d06eb067b437f14d341c44c9bf.setContent(html_2cadb1d58026bc68b09b28a6674a0da1);
+            
+        
+
+        poly_line_504668060ef2c9d10215d0b675ae185a.bindPopup(popup_9cbb45d06eb067b437f14d341c44c9bf)
+        ;
+
+        
+    
+    
+            var marker_f58f59aa0dc30a735d19f3fd26632fb1 = L.marker(
+                [20.003800000000002, 82.92865],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_1efc510b5159fd1c6d2f2e7cfafaf244 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: beige;\"\u003e1.0h\u003c/div\u003e"});
+            marker_f58f59aa0dc30a735d19f3fd26632fb1.setIcon(div_icon_1efc510b5159fd1c6d2f2e7cfafaf244);
+        
+    
+        var popup_b9918cf57f622bf2199762149755c31e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_118d98ee7efec30f065ec52109005fb2 = $(`<div id="html_118d98ee7efec30f065ec52109005fb2" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_b9918cf57f622bf2199762149755c31e.setContent(html_118d98ee7efec30f065ec52109005fb2);
+            
+        
+
+        marker_f58f59aa0dc30a735d19f3fd26632fb1.bindPopup(popup_b9918cf57f622bf2199762149755c31e)
+        ;
+
+        
+    
+    
+            var poly_line_8b8b63f52d7b008b8e1c73566e30a7a6 = L.polyline(
+                [[19.076, 72.8777], [30.0869, 78.2676]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_de39edc18ef05011b464ea1be3d23bd4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_22b33a412c245db170965315822c113c = $(`<div id="html_22b33a412c245db170965315822c113c" style="width: 100.0%; height: 100.0%;"><b>Arjun Malhotra's Journey</b><br>From: Mumbai<br>To: Rishikesh<br>Departure: 2025-04-28 01:29<br>Arrival: 2025-04-28 01:36<br>Travel Time: 0.1 hours<br>Minimum Required Time: 3.5 hours</div>`)[0];
+                popup_de39edc18ef05011b464ea1be3d23bd4.setContent(html_22b33a412c245db170965315822c113c);
+            
+        
+
+        poly_line_8b8b63f52d7b008b8e1c73566e30a7a6.bindPopup(popup_de39edc18ef05011b464ea1be3d23bd4)
+        ;
+
+        
+    
+    
+            var marker_a66d417a34c886e5a46fb8fe3c9c499d = L.marker(
+                [24.58145, 75.57265000000001],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_3df3dabdd49a86c1ee3898e907196e84 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkblue;\"\u003e0.1h\u003c/div\u003e"});
+            marker_a66d417a34c886e5a46fb8fe3c9c499d.setIcon(div_icon_3df3dabdd49a86c1ee3898e907196e84);
+        
+    
+        var popup_cc3cabedb528544248b87a3d13b38561 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d0d7c7b7f6dd328343e0b72f2104133a = $(`<div id="html_d0d7c7b7f6dd328343e0b72f2104133a" style="width: 100.0%; height: 100.0%;">Travel Time: 0.1 hours<br>Minimum Required: 3.5 hours</div>`)[0];
+                popup_cc3cabedb528544248b87a3d13b38561.setContent(html_d0d7c7b7f6dd328343e0b72f2104133a);
+            
+        
+
+        marker_a66d417a34c886e5a46fb8fe3c9c499d.bindPopup(popup_cc3cabedb528544248b87a3d13b38561)
+        ;
+
+        
+    
+    
+            var poly_line_2d2de15e0f92c1473f8affbf6219fe3e = L.polyline(
+                [[30.0869, 78.2676], [12.9716, 77.5946]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_089e9e85732c50125dc431db662e75b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88cd6d17192687de8d877afd4fedda8a = $(`<div id="html_88cd6d17192687de8d877afd4fedda8a" style="width: 100.0%; height: 100.0%;"><b>Arjun Malhotra's Journey</b><br>From: Rishikesh<br>To: Bangalore<br>Departure: 2025-04-30 17:36<br>Arrival: 2025-04-30 17:58<br>Travel Time: 0.4 hours<br>Minimum Required Time: 3.5 hours</div>`)[0];
+                popup_089e9e85732c50125dc431db662e75b0.setContent(html_88cd6d17192687de8d877afd4fedda8a);
+            
+        
+
+        poly_line_2d2de15e0f92c1473f8affbf6219fe3e.bindPopup(popup_089e9e85732c50125dc431db662e75b0)
+        ;
+
+        
+    
+    
+            var marker_7446f4596f23ce4cf460b9adc2ad42ca = L.marker(
+                [21.52925, 77.9311],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_0a7d8e7535fcce246434f04a65ad5260 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkblue;\"\u003e0.4h\u003c/div\u003e"});
+            marker_7446f4596f23ce4cf460b9adc2ad42ca.setIcon(div_icon_0a7d8e7535fcce246434f04a65ad5260);
+        
+    
+        var popup_d33a232693b0c5576b6ce2aa5ceb47d3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_fa77031d3334c5cc372f4c379f948a86 = $(`<div id="html_fa77031d3334c5cc372f4c379f948a86" style="width: 100.0%; height: 100.0%;">Travel Time: 0.4 hours<br>Minimum Required: 3.5 hours</div>`)[0];
+                popup_d33a232693b0c5576b6ce2aa5ceb47d3.setContent(html_fa77031d3334c5cc372f4c379f948a86);
+            
+        
+
+        marker_7446f4596f23ce4cf460b9adc2ad42ca.bindPopup(popup_d33a232693b0c5576b6ce2aa5ceb47d3)
+        ;
+
+        
+    
+    
+            var poly_line_75d8d3d19b95d76abcf49abc3fa0be4c = L.polyline(
+                [[12.9716, 77.5946], [24.5854, 73.7125]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_f558838a4c9dde04b2661e9e704b7204 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ed81a9f49d9072f85a2d6eeb30d473b = $(`<div id="html_1ed81a9f49d9072f85a2d6eeb30d473b" style="width: 100.0%; height: 100.0%;"><b>Arjun Malhotra's Journey</b><br>From: Bangalore<br>To: Udaipur<br>Departure: 2025-05-02 23:58<br>Arrival: 2025-05-03 00:00<br>Travel Time: 0.0 hours<br>Minimum Required Time: 3.0 hours</div>`)[0];
+                popup_f558838a4c9dde04b2661e9e704b7204.setContent(html_1ed81a9f49d9072f85a2d6eeb30d473b);
+            
+        
+
+        poly_line_75d8d3d19b95d76abcf49abc3fa0be4c.bindPopup(popup_f558838a4c9dde04b2661e9e704b7204)
+        ;
+
+        
+    
+    
+            var marker_b97941c8dc4be459e1da803f3f4ebc59 = L.marker(
+                [18.7785, 75.65355],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_9d4202d2d0d925bf6fa48cfba0e1ab4c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkblue;\"\u003e0.0h\u003c/div\u003e"});
+            marker_b97941c8dc4be459e1da803f3f4ebc59.setIcon(div_icon_9d4202d2d0d925bf6fa48cfba0e1ab4c);
+        
+    
+        var popup_f477f5e8d4f948f2d0bd66afd0916d47 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a0de960a46d8ddb82aa21e27086679c9 = $(`<div id="html_a0de960a46d8ddb82aa21e27086679c9" style="width: 100.0%; height: 100.0%;">Travel Time: 0.0 hours<br>Minimum Required: 3.0 hours</div>`)[0];
+                popup_f477f5e8d4f948f2d0bd66afd0916d47.setContent(html_a0de960a46d8ddb82aa21e27086679c9);
+            
+        
+
+        marker_b97941c8dc4be459e1da803f3f4ebc59.bindPopup(popup_f477f5e8d4f948f2d0bd66afd0916d47)
+        ;
+
+        
+    
+    
+            var poly_line_7d02eefc363e4f4093bd1e35f0ee924b = L.polyline(
+                [[24.5854, 73.7125], [30.0869, 78.2676]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_0b5ab5059f5699aefb5d51240c0f03c4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7d6cb32309b5769c5f46dcaeeda45b2c = $(`<div id="html_7d6cb32309b5769c5f46dcaeeda45b2c" style="width: 100.0%; height: 100.0%;"><b>Arjun Malhotra's Journey</b><br>From: Udaipur<br>To: Rishikesh<br>Departure: 2025-05-04 16:00<br>Arrival: 2025-05-04 17:00<br>Travel Time: 1.0 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_0b5ab5059f5699aefb5d51240c0f03c4.setContent(html_7d6cb32309b5769c5f46dcaeeda45b2c);
+            
+        
+
+        poly_line_7d02eefc363e4f4093bd1e35f0ee924b.bindPopup(popup_0b5ab5059f5699aefb5d51240c0f03c4)
+        ;
+
+        
+    
+    
+            var marker_35339c5ca0a0d558a554cce294a5cfdf = L.marker(
+                [27.33615, 75.99005],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_bc5b6a262ec3a0ca7f5b87ff359090a1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkblue;\"\u003e1.0h\u003c/div\u003e"});
+            marker_35339c5ca0a0d558a554cce294a5cfdf.setIcon(div_icon_bc5b6a262ec3a0ca7f5b87ff359090a1);
+        
+    
+        var popup_3efe00ae4a19cef50d77ab0e2fdbae2e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_dc1e67bf177ad20738405382b1246a86 = $(`<div id="html_dc1e67bf177ad20738405382b1246a86" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_3efe00ae4a19cef50d77ab0e2fdbae2e.setContent(html_dc1e67bf177ad20738405382b1246a86);
+            
+        
+
+        marker_35339c5ca0a0d558a554cce294a5cfdf.bindPopup(popup_3efe00ae4a19cef50d77ab0e2fdbae2e)
+        ;
+
+        
+    
+    
+            var poly_line_6f9d05d4660f0179c7df930197a1b3a8 = L.polyline(
+                [[30.0869, 78.2676], [10.8505, 76.2711]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_794a6c45d151eb8b24442b200c35c954 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_48186e6fc4813ddb1baa3c4897260914 = $(`<div id="html_48186e6fc4813ddb1baa3c4897260914" style="width: 100.0%; height: 100.0%;"><b>Arjun Malhotra's Journey</b><br>From: Rishikesh<br>To: Kerala<br>Departure: 2025-05-07 11:00<br>Arrival: 2025-05-07 11:13<br>Travel Time: 0.2 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_794a6c45d151eb8b24442b200c35c954.setContent(html_48186e6fc4813ddb1baa3c4897260914);
+            
+        
+
+        poly_line_6f9d05d4660f0179c7df930197a1b3a8.bindPopup(popup_794a6c45d151eb8b24442b200c35c954)
+        ;
+
+        
+    
+    
+            var marker_3fa248c13e250e147a0070a912d8ec3c = L.marker(
+                [20.4687, 77.26935],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_44206cd3ae08feb7e8f1faef662a1af1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkblue;\"\u003e0.2h\u003c/div\u003e"});
+            marker_3fa248c13e250e147a0070a912d8ec3c.setIcon(div_icon_44206cd3ae08feb7e8f1faef662a1af1);
+        
+    
+        var popup_1a16e25855db9773079ee4c1e2060c5f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_13b2e18a1dad5cdfe94155c51683a5b0 = $(`<div id="html_13b2e18a1dad5cdfe94155c51683a5b0" style="width: 100.0%; height: 100.0%;">Travel Time: 0.2 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_1a16e25855db9773079ee4c1e2060c5f.setContent(html_13b2e18a1dad5cdfe94155c51683a5b0);
+            
+        
+
+        marker_3fa248c13e250e147a0070a912d8ec3c.bindPopup(popup_1a16e25855db9773079ee4c1e2060c5f)
+        ;
+
+        
+    
+    
+            var poly_line_b8eb72921e97da177e1ab8fce9762ba1 = L.polyline(
+                [[31.634, 74.8723], [15.2993, 74.124]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_a913b28822f1a413f5abc47a5a6407ba = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5786c1cf46dae96bb3398cd307209e06 = $(`<div id="html_5786c1cf46dae96bb3398cd307209e06" style="width: 100.0%; height: 100.0%;"><b>Ishaan Khanna's Journey</b><br>From: Amritsar<br>To: Goa<br>Departure: 2025-04-28 18:29<br>Arrival: 2025-04-28 18:34<br>Travel Time: 0.1 hours<br>Minimum Required Time: 4.0 hours</div>`)[0];
+                popup_a913b28822f1a413f5abc47a5a6407ba.setContent(html_5786c1cf46dae96bb3398cd307209e06);
+            
+        
+
+        poly_line_b8eb72921e97da177e1ab8fce9762ba1.bindPopup(popup_a913b28822f1a413f5abc47a5a6407ba)
+        ;
+
+        
+    
+    
+            var marker_c941e7ae03c26cd55d9013f54be352a3 = L.marker(
+                [23.46665, 74.49815],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_c4a9b2add68f3af48847263c622d4b0d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkgreen;\"\u003e0.1h\u003c/div\u003e"});
+            marker_c941e7ae03c26cd55d9013f54be352a3.setIcon(div_icon_c4a9b2add68f3af48847263c622d4b0d);
+        
+    
+        var popup_509075ba884040288bfe8f941657bd23 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_25f0a3b26b9a674b25efdef3a7b32eb7 = $(`<div id="html_25f0a3b26b9a674b25efdef3a7b32eb7" style="width: 100.0%; height: 100.0%;">Travel Time: 0.1 hours<br>Minimum Required: 4.0 hours</div>`)[0];
+                popup_509075ba884040288bfe8f941657bd23.setContent(html_25f0a3b26b9a674b25efdef3a7b32eb7);
+            
+        
+
+        marker_c941e7ae03c26cd55d9013f54be352a3.bindPopup(popup_509075ba884040288bfe8f941657bd23)
+        ;
+
+        
+    
+    
+            var poly_line_cbf426adc3929a3594462b681b3c3a63 = L.polyline(
+                [[15.2993, 74.124], [25.3176, 82.9739]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+        var popup_015fa01c46bc39bdf9ec8d968634e2f6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ac22d823496b9db0e28bad5f86aa5bd0 = $(`<div id="html_ac22d823496b9db0e28bad5f86aa5bd0" style="width: 100.0%; height: 100.0%;"><b>Ishaan Khanna's Journey</b><br>From: Goa<br>To: Varanasi<br>Departure: 2025-04-30 05:34<br>Arrival: 2025-04-30 06:34<br>Travel Time: 1.0 hours<br>Minimum Required Time: 3.5 hours</div>`)[0];
+                popup_015fa01c46bc39bdf9ec8d968634e2f6.setContent(html_ac22d823496b9db0e28bad5f86aa5bd0);
+            
+        
+
+        poly_line_cbf426adc3929a3594462b681b3c3a63.bindPopup(popup_015fa01c46bc39bdf9ec8d968634e2f6)
+        ;
+
+        
+    
+    
+            var marker_9794378c1644b068282dc56b24ef150f = L.marker(
+                [20.30845, 78.54894999999999],
+                {}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+    
+            var div_icon_9f76682a51b6f356b55d8ba8fde30ea6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; color: darkgreen;\"\u003e1.0h\u003c/div\u003e"});
+            marker_9794378c1644b068282dc56b24ef150f.setIcon(div_icon_9f76682a51b6f356b55d8ba8fde30ea6);
+        
+    
+        var popup_283da7d85411ec286fb59b5959891a2e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_335431ee24c0a21bdab3185384e407e1 = $(`<div id="html_335431ee24c0a21bdab3185384e407e1" style="width: 100.0%; height: 100.0%;">Travel Time: 1.0 hours<br>Minimum Required: 3.5 hours</div>`)[0];
+                popup_283da7d85411ec286fb59b5959891a2e.setContent(html_335431ee24c0a21bdab3185384e407e1);
+            
+        
+
+        marker_9794378c1644b068282dc56b24ef150f.bindPopup(popup_283da7d85411ec286fb59b5959891a2e)
+        ;
+
+        
+    
+    
+            var layer_control_ffaa00d12726fc1ca7b7170d0480b162 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_7fd471fb53de6a7abb42705e970d9fde,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_ffaa00d12726fc1ca7b7170d0480b162.base_layers,
+                layer_control_ffaa00d12726fc1ca7b7170d0480b162.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_3662709d154be49d9e773a907260d5bb);
+        
+</script>
+</html>
