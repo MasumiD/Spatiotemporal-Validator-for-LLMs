@@ -758,40 +758,32 @@ def save_metrics_to_file(all_results, filename="metrics_log.json"):
             "results": {}
         }
    
-    # Update results
     data["results"] = all_results
-   
-    # Save to file
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
 
 def main():
     # Configuration
     EPOCHS = 100
-    LLM_PROVIDERS = ["llama"]
+    LLM_PROVIDERS = ["openai", "gemini", "llama"]
     MODEL_NAMES = {
         "openai": "gpt-4o-mini",
         "gemini": "gemini-2.0-flash-thinking-exp-01-21",
         "llama": "llama2:7b",
     }
     
-    # Excel file configuration
     EXCEL_FILENAME = f"{LLM_PROVIDERS[0]}_6.xlsx"
     
-    # Create Excel workbook and worksheet
     workbook = openpyxl.Workbook()
     worksheet = workbook.active
     worksheet.title = "Validation Results"
     
-    # Set column headers
     headers = ['Epoch', 'Validation Response', 'Incorrect Segments', 'Itinerary Status', 'Validated Itinerary']
     for col, header in enumerate(headers, 1):
         cell = worksheet.cell(row=1, column=col, value=header)
         cell.font = openpyxl.styles.Font(bold=True)
     
-    # Set column widths
     worksheet.column_dimensions['A'].width = 10  # Epoch
-    # worksheet.column_dimensions['B'].width = 15  # Format Valid
     worksheet.column_dimensions['B'].width = 100  # Validation Response
     worksheet.column_dimensions['C'].width = 20  # Incorrect Segments
     worksheet.column_dimensions['D'].width = 20  # Itinerary Status
@@ -842,10 +834,8 @@ def main():
     }
     all_results['overall'] = overall_metrics
    
-    # Save metrics to file
     save_metrics_to_file(all_results)
-    
-    # Save Excel file
+
     workbook.save(EXCEL_FILENAME)
 
 if __name__ == "__main__":
