@@ -1,0 +1,35 @@
+{
+    "experiment_timestamp": "2025-05-31 16:15:01",
+    "metrics_format": {
+        "success_rate": "Percentage of epochs that resulted in a valid itinerary",
+        "timing_issues_per_itinerary": "Mean number of timing issues per itinerary",
+        "fixed_issues_per_itinerary": "Mean number of issues fixed per itinerary",
+        "fix_rate": "Percentage of timing issues fixed per itinerary",
+        "total_epochs": "Total number of epochs",
+        "successful_epochs": "Total number of successful epochs",
+        "total_segments": "Total number of segments in all itineraries",
+        "total_timing_issues": "Total number of timing issues across all itineraries",
+        "total_fixed_issues": "Total number of issues fixed across all itineraries"
+    },
+    "results": {
+        "llama": {
+            "success_rate": 100.0,
+            "timing_issues_per_itinerary": 4.58,
+            "fixed_issues_per_itinerary": 4.58,
+            "fix_rate": 100.0,
+            "total_epochs": 100,
+            "successful_epochs": 100,
+            "total_segments": 496,
+            "total_timing_issues": 458,
+            "total_fixed_issues": 458
+        },
+        "overall": {
+            "success_rate": 100.0,
+            "timing_issues_per_itinerary": 4.58,
+            "fix_rate": 100.0,
+            "total_epochs": 100,
+            "total_segments": 496,
+            "total_timing_issues": 458
+        }
+    }
+}
